@@ -1,0 +1,40 @@
+如果我们不适用上述那种设置为0dp的方式,直接用wrap_content和match_parent的话, 
+则要接着解析weight属性了,分为两种情况,wrap_content与match_parent！另外还要看
+ LinearLayout的orientation是水平还是竖直,这个决定哪个方向等比例划分
+
+
+<!--wrap_content比较简单,直接就按比例的了-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".MainActivity">
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    android:layout_weight="1"
+    android:text="one"
+    android:background="#98FB98"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_weight="2"
+        android:text="two"
+        android:background="#FFFF00"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_weight="3"
+        android:text="three"
+        android:background="#FF00FF"/>
+  </androidx.appcompat.widget.LinearLayoutCompat>
+
+
